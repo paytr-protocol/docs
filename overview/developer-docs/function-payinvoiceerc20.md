@@ -2,8 +2,7 @@
 
 The \`payInvoiceERC20\` function is the most used function in the contract. It allows users to make an early payment and start earning yield.
 
-````solidity
-// ```solidity
+```solidity
 function payInvoiceERC20(
         address _asset, //address underlying token, like USDC
         address _payee,
@@ -15,4 +14,3 @@ function payInvoiceERC20(
         address _cometAddress
         ) public IsNotPaid(_paymentReference) nonReentrant whenNotPaused {
 ```
-````
