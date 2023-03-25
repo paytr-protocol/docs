@@ -5,7 +5,7 @@
 ## Overview
 
 * [💡 Developer docs](overview/developer-docs.md)
-  * [Function payInvoiceERC20](overview/developer-docs/function-payinvoiceerc20.md)
+  * [Function payInvoiceERC20()](overview/developer-docs/function-payinvoiceerc20.md)
 * [✨ How does it work?](overview/how-does-it-work/README.md)
   * [👍 Approve ERC20 tokens](overview/how-does-it-work/approve-erc20-tokens.md)
   * [💰 Initiating a payment](overview/how-does-it-work/initiating-a-payment.md)
