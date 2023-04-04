@@ -21,8 +21,9 @@ function payInvoiceERC20(
   Comet Address cUSDCv3: `0xF25212E676D1F7F89Cd72fFEe66158f541246445`
 * `_payee`: the receiver of the principal amount.
 * `_feeAddress`: In case you want to charge an extra fee, this is the receiver address of the fee.\
-  If you don't want to use a fee, make sure to pass `address(0)`as parameter.
-* `_dueDate`: The due date of the payment in days. Please note this is subject to change.
+  If the `_feeAmount` is 0, the smart contract will use the msg.sender address as `_feeAddress`_._ Make sure to pass the msg.sender as parameter if the __ feeAmount is 0.
+* `_dueDate`: The due date of the payment in days. Please note this is subject to change.\
+  It is possible to insert a `_dueDate` of 0.
 * `_amount`: The principal amount in wei. Make sure to double check the number of decimals for each `_asset`.
 * `_feeAmount`: The fee amount in wei. Again, make sure to double check the number of decimals for each `_asset`.
 * `_paymentReference`: Needs to be passed in bytes.&#x20;
