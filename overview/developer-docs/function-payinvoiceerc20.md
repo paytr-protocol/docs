@@ -1,6 +1,6 @@
 # Function payInvoiceERC20()
 
-The \`payInvoiceERC20\` function is the most used function in the contract. It allows users to make an early payment and start earning yield.
+The \`payInvoiceERC20\` function allows users and other contracts to make an early payment and start earning yield.
 
 ```solidity
 function payInvoiceERC20(
