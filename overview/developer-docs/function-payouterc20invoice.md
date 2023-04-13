@@ -17,6 +17,7 @@ We use Gelato to offer a much more decentralised solution. Anyone can see the co
 To ensure the compatibility with [Request Network](https://www.request.network), the payout function checks the feeAddress.\
 When the check passes, Request's `ERC20FeeProxy` gets called.
 
+{% code lineNumbers="true" %}
 ```solidity
 function payOutERC20Invoice(RedeemDataERC20[] calldata redeemData, totalPerAssetToRedeem[] calldata assetsToRedeem ) public onlyGelato nonReentrant {  
 
@@ -66,5 +67,23 @@ function payOutERC20Invoice(RedeemDataERC20[] calldata redeemData, totalPerAsset
 
             emit PayOutERC20Event(_asset, _payee, _amount, _paymentReference, _feeAmount, _feeAddress);           
         }        
+    }
+```
+{% endcode %}
+
+#### Redeeming of assets
+
+Line 4 of this function calls the private function `redeemFundsERC20`. This function makes sure all the assets and correct amounts are redeemed from Compound Finance.
+
+```solidity
+function redeemFundsERC20(totalPerAssetToRedeem[] calldata assetsToRedeem) private returns(bool) {
+        uint i;
+        uint assetsToRedeemLength = assetsToRedeem.length;
+
+        for (;i < assetsToRedeemLength;) {
+            IComet(assetsToRedeem[i].cometAddress).withdraw(assetsToRedeem[i].asset, assetsToRedeem[i].amount);
+            ++i;
+        }
+        return true;
     }
 ```
