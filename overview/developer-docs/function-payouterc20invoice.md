@@ -15,7 +15,7 @@ We use Gelato to offer a much more decentralised solution. Anyone can see the co
 #### Request Network compatibility
 
 To ensure the compatibility with [Request Network](https://www.request.network), the payout function checks the `_feeAddress`.\
-When the check passes, Request's `ERC20FeeProxy` gets called.
+When the check passes, Request's [`ERC20FeeProxy`](https://github.com/RequestNetwork/requestNetwork/blob/master/packages/smart-contracts/src/contracts/ERC20FeeProxy.sol) gets called.
 
 {% code lineNumbers="true" %}
 ```solidity
