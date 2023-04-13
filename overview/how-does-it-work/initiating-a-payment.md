@@ -7,7 +7,7 @@ The **mandatory input** fields are:
 * (Currency - only USDC is supported in the beta so you can't select another currency)
 * Amount
 * Due date (can be set to 0 if you want don't want the funds to be auto released just yet)
-* Payee - the receiving address if the payment, for example your supplier
+* Payee - the receiving address of the payment, for example your supplier
 * Payment reference
 
 The **optional input** fields are:
