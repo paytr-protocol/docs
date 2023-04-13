@@ -31,4 +31,4 @@ Checks if the `_paymentReference` is present in the `paymentMapping`.
 OnlyPayer(_paymentReference)
 ```
 
-Only allows the payer to change the `dueDate` of the __ `paymentReference`.
+Only allows the payer to change the `dueDate` of the `paymentReference`.
