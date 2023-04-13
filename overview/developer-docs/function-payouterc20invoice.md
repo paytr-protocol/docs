@@ -14,7 +14,7 @@ We use Gelato to offer a much more decentralised solution. Anyone can see the co
 
 #### Request Network compatibility
 
-To ensure the compatibility with [Request Network](https://www.request.network), the payout function checks the feeAddress.\
+To ensure the compatibility with [Request Network](https://www.request.network), the payout function checks the `_feeAddress`.\
 When the check passes, Request's `ERC20FeeProxy` gets called.
 
 {% code lineNumbers="true" %}
