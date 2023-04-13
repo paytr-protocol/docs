@@ -12,6 +12,11 @@ The Gelato Web3 Function runs every minute during the beta, you can view the com
 Upon mainnet deployment, the Gelato function will run once or twice a day.\
 We use Gelato to offer a much more decentralised solution. Anyone can see the code that gets used to calculate the payouts.
 
+#### Request Network compatibility
+
+To ensure the compatibility with [Request Network](https://www.request.network), the payout function checks the feeAddress.\
+When the check passes, Request's `ERC20FeeProxy` gets called.
+
 ```solidity
 function payOutERC20Invoice(RedeemDataERC20[] calldata redeemData, totalPerAssetToRedeem[] calldata assetsToRedeem ) public onlyGelato nonReentrant {  
 
