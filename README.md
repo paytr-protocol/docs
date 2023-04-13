@@ -8,10 +8,10 @@ You can access our app on [https://paytr.netlify.app](https://paytr.netlify.app/
 
 ## Quick links
 
-{% content-ref url="overview/developer-docs.md" %}
-[developer-docs.md](overview/developer-docs.md)
-{% endcontent-ref %}
-
 {% content-ref url="overview/how-does-it-work/" %}
 [how-does-it-work](overview/how-does-it-work/)
+{% endcontent-ref %}
+
+{% content-ref url="overview/developer-docs.md" %}
+[developer-docs.md](overview/developer-docs.md)
 {% endcontent-ref %}
