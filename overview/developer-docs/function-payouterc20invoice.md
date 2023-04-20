@@ -8,7 +8,7 @@ This function handles the payment of all due payment references.\
 
 
 Because of gas fees and block limits, the calculation of due references, interest amounts etc. happens off-chain, hence this function can only be called by the contract owner and the Gelato smart contract.\
-The Gelato Web3 Function runs every minute during the beta, you can view the complete calculation here \[insert link]. The code is uploaded to IPFS and is immutable.\
+The Gelato Web3 Function runs every minute during the beta, you can view the complete calculation here \[link to follow]. The code is uploaded to IPFS and is immutable.\
 Upon mainnet deployment, the Gelato function will run once or twice a day.\
 We use Gelato to offer a much more decentralised solution. Anyone can see the code that gets used to calculate the payouts.
 
