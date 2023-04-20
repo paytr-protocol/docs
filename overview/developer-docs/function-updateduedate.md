@@ -1,6 +1,6 @@
 # Function updatedueDate()
 
-A payment can be initiated with a 0 `_dueDate`. This functionality allows for other use cases than just early payment. One could use the smart contract as a real escrow service, where users can release the payment by updating the due date of the payment.
+A payment can be initiated with a 0 `_dueDate`. This functionality allows for other use cases than just early payment after x amount of days. One could use the smart contract as a real escrow service, where users can release the payment by updating the due date of the payment.
 
 ```solidity
 function updateDueDate(bytes calldata _paymentReference, uint256 _dueDateUpdated) public IsInContract(_paymentReference) OnlyPayer(_paymentReference) nonReentrant whenNotPaused {

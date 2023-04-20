@@ -1,6 +1,6 @@
 # ✨ How does it work?
 
-This part of the documentation is aimed towards regular users that use the Paytr frontend. Paytr is currently in beta.
+This part of the documentation is aimed towards regular users that use the Paytr frontend. Paytr is currently in beta. The frontend will be launched in May.
 
 Our frontend has a Faucet button you can use to acquire some test USDC. Make sure to grab some test MATIC before you start using the app.
 

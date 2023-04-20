@@ -10,7 +10,7 @@ This function handles the payment of all due payment references and payout of ad
 Due to gas fees and block limits, the calculation of due references, interest amounts etc. happens off-chain, hence this function can only be called by the contract owner and the Gelato smart contract.\
 The Gelato Web3 Function runs every minute during the beta, you can view the complete calculation here \[link to follow]. The code is uploaded to IPFS and is immutable.\
 Upon mainnet deployment, the Gelato function will run once or twice a day.\
-We use Gelato to offer a much more decentralised solution. Anyone can see the code that gets used to calculate the payouts.
+We use the Gelato Network to offer a much more decentralised solution. Anyone can see the code that gets used to calculate the payouts.
 
 #### Request Network compatibility
 
@@ -76,7 +76,7 @@ function payOutERC20Invoice(RedeemDataERC20[] calldata redeemData, totalPerAsset
 Line 4 of this function calls the private function `redeemFundsERC20`. This function makes sure all the assets and correct amounts are redeemed from Compound Finance.
 
 ```solidity
-function redeemFundsERC20(totalPerAssetToRedeem[] calldata assetsToRedeem) private returns(bool) {
+function redeemFundsERC20(totalPerAssetToRedeem[] calldata assetsToRedeem) private {
         uint i;
         uint assetsToRedeemLength = assetsToRedeem.length;
 
@@ -84,6 +84,5 @@ function redeemFundsERC20(totalPerAssetToRedeem[] calldata assetsToRedeem) priva
             IComet(assetsToRedeem[i].cometAddress).withdraw(assetsToRedeem[i].asset, assetsToRedeem[i].amount);
             ++i;
         }
-        return true;
     }
 ```
