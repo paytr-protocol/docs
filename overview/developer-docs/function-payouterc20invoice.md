@@ -4,7 +4,7 @@ description: Only callable by the contract owner and the automated Gelato smart 
 
 # Function payOutERC20Invoice()
 
-This function handles the payment of all due payment references.\
+This function handles the payment of all due payment references and payout of additional fees.\
 
 
 Because of gas fees and block limits, the calculation of due references, interest amounts etc. happens off-chain, hence this function can only be called by the contract owner and the Gelato smart contract.\
