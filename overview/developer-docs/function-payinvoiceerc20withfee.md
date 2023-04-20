@@ -1,11 +1,6 @@
----
-description: >-
-  The `payInvoiceERC20` function allows users and other contracts to make an
-  early payment and start earning yield, while allowing an extra fee to be
-  collected upfront.
----
-
 # Function payInvoiceERC20WithFee()
+
+The `payInvoiceERC20` function allows users and other contracts to make an early payment and start earning yield, while allowing an extra fee to be collected upfront.
 
 ```solidity
 function payInvoiceERC20WithFee(
