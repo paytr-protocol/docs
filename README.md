@@ -15,3 +15,5 @@ Our smart contract leverages the power of [Compound Finance](https://compound.fi
 {% content-ref url="overview/developer-docs.md" %}
 [developer-docs.md](overview/developer-docs.md)
 {% endcontent-ref %}
+
+Follow us on [Twitter](https://twitter.com/paytr\_protocol)!
