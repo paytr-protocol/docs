@@ -17,9 +17,7 @@ function updateDueDate(bytes calldata _paymentReference, uint256 _dueDateUpdated
 
 `_dueDateUpdated`: Insert the new due date in Epoch time. Make sure the new due date is greater than the current block.timestamp + 1 day.
 
-{% hint style="info" %}
 This function uses 2 modifiers:
-{% endhint %}
 
 ```solidity
 IsInContract(_paymentReference)
