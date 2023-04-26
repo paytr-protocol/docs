@@ -2,13 +2,13 @@
 
 After approving a sufficient amount for the ERC20 token, you can initiate the payment through our app.
 
-| Mandatory fields  | Comment                                                                           |
-| ----------------- | --------------------------------------------------------------------------------- |
-| Currency          | Only USDC on Mumbai is supported in the beta so you can't select another currency |
-| Amount            |                                                                                   |
-| Due date          | Can be set to 0 if you want don't want the funds to be auto released yet          |
-| Payee             | The receiving address of the payment, for example your supplier                   |
-| Payment reference |                                                                                   |
+| Mandatory fields  | Comment                                                                                   |
+| ----------------- | ----------------------------------------------------------------------------------------- |
+| Currency          | Only USDC on Polygon Mumbai is supported in the beta so you can't select another currency |
+| Amount            |                                                                                           |
+| Due date          | Can be set to 0 if you want don't want the funds to be auto released yet                  |
+| Payee             | The receiving address of the payment, for example your supplier                           |
+| Payment reference |                                                                                           |
 
 | Optional fields | Comment                                 |
 | --------------- | --------------------------------------- |
