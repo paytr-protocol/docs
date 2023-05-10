@@ -17,29 +17,28 @@ We use the Gelato Network to offer a much more decentralised solution. Anyone ca
 To ensure the compatibility with [Request Network](https://www.request.network), the payout function checks the `_feeAddress`.\
 When the check passes, Request's [`ERC20FeeProxy`](https://github.com/RequestNetwork/requestNetwork/blob/master/packages/smart-contracts/src/contracts/ERC20FeeProxy.sol) gets called.
 
-{% code lineNumbers="true" %}
 ```solidity
-function payOutERC20Invoice(RedeemDataERC20[] calldata redeemData, totalPerAssetToRedeem[] calldata assetsToRedeem ) public onlyGelato nonReentrant {  
+function payOutERC20Invoice(RedeemDataERC20[] calldata redeemData, totalPerAssetToRedeem[] calldata assetsToRedeem ) public onlyGelatoOrOwner nonReentrant {  
 
         require(redeemData.length > 0 && assetsToRedeem.length > 0, "No payments to redeem");        
-        require(redeemFundsERC20(assetsToRedeem), "Redeeming failed");
+        redeemFundsERC20(assetsToRedeem);
 
-        uint i;
+        uint256 i;
         uint256 redeemDataLength = redeemData.length;
 
         for (; i < redeemDataLength;) {
             bytes memory _paymentReference = redeemData[i].paymentReference;
+            require(paymentMapping[_paymentReference].amount != 0,"Unknown payment reference"); //check to see if payment reference to be paid out is present in the contract
             address payable _payee = payable(redeemData[i].payee);
             address payable _payer = payable(redeemData[i].payer);
             address payable _feeAddress = payable(redeemData[i].feeAddress);
             address _asset = redeemData[i].asset;            
             uint256 _amount = redeemData[i].amount;
             uint256 _feeAmount = redeemData[i].feeAmount;
+            uint256 _interestAmount = redeemData[i].interestAmount * 9000 / 10000;
             
             //Update state before transferring funds
-            delete paymentMapping[_paymentReference];
-            
-            uint256 _interestAmount = redeemData[i].interestAmount * 9000 / 10000;      
+            paymentMapping[_paymentReference].amount = 0;
             
             /*
             Transfer funds to payer, payee and feeAddress. Payments originating from Request Network call the ERC20FeeProxy contract.
@@ -59,17 +58,25 @@ function payOutERC20Invoice(RedeemDataERC20[] calldata redeemData, totalPerAsset
             
             } else {
                 IERC20(_asset).safeTransfer(_payee, _amount);
-                IERC20(_asset).safeTransfer(_feeAddress, _feeAmount); 
+                if(_feeAmount != 0) {
+                    IERC20(_asset).safeTransfer(_feeAddress, _feeAmount);
+                }
             }
             
             IERC20(_asset).safeTransfer(_payer, _interestAmount);
-            ++i;     
+            ++i; 
 
             emit PayOutERC20Event(_asset, _payee, _amount, _paymentReference, _feeAmount, _feeAddress);           
-        }        
+        }
+        //transfer total fee amount to contract owner
+        uint256 j;
+        for (;j < assetsToRedeem.length;) {
+            uint256 _balanceAfterRedeeming = IERC20(assetsToRedeem[j].asset).balanceOf(address(this));
+            IERC20(assetsToRedeem[j].asset).safeTransfer(owner(), _balanceAfterRedeeming);
+            ++j;
+        }      
     }
 ```
-{% endcode %}
 
 #### Redeeming of assets
 

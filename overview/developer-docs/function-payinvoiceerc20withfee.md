@@ -12,7 +12,7 @@ function payInvoiceERC20WithFee(
         uint256 _feeAmount,
         bytes calldata _paymentReference,
         address _cometAddress
-        ) public IsNotPaid(_paymentReference) nonReentrant whenNotPaused
+        ) nonReentrant whenNotPaused
 ```
 
 | Parameter           | Description                                                                                                                                                                                                                                                                                                                                            |
@@ -25,8 +25,6 @@ function payInvoiceERC20WithFee(
 | `_feeAmount`        | The fee amount in wei. Again, make sure to double check the number of decimals for the `_asset`.                                                                                                                                                                                                                                                       |
 | `_paymentReference` | Needs to be passed in bytes.                                                                                                                                                                                                                                                                                                                           |
 | `_cometAddress`     | The address of Compound Finance's V3 cToken contract. You can check the Comet address per chain and asset [here](https://docs.compound.finance/#networks). The Comet contract address is the first one in the list, for example cUSDCv3.                                                                                                               |
-
-The function uses modifier `IsNotPaid(_paymentReference)`.
 
 The `_amount` and `_feeAmount` are transferred to the Comet contract, to earn yield.\
 The payment details are stored in the `paymentMapping.`
