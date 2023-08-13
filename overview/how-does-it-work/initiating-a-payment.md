@@ -17,7 +17,7 @@ After approving a sufficient amount for the ERC20 token, you can initiate the pa
 
 Make sure to double check the receiver address and due date and click on 'Pay invoice'.
 
-The protocal charges a fee of $0.10 upon paying your invoice (subject to change). Any additional fees are also deducted from your account upon payment. These additional fees yield interest as well and are only paid to the fee address on the due date of your payment.\
+The protocol charges a fee of $0.10 upon paying your invoice (subject to change). Any additional fees are also deducted from your account upon payment. These additional fees yield interest as well and are only paid to the fee address on the due date of your payment.\
 \
 The app will show a loading animation and a confirmation when your payment was completed.\
 You'll see an error icon in case your transaction is rejected or an other error occured.

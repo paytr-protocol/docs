@@ -8,5 +8,3 @@ You can read more about approving tokens [here](https://support.metamask.io/hc/e
 #### Approve ERC20 tokens using the Paytr app
 
 The Paytr frontend automatically checks the approved amount (aka 'allowance') per ERC20 token for the connected account. Should you want to make a payment without sufficient allowance, the app will ask you to increase the allowance first.
-
-In the beta you'll need to manually input the allowance amount. In the future you'll be able to approve the maximum amount or input the amount manually.
