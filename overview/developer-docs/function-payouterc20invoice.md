@@ -1,20 +1,14 @@
----
-description: Only callable by the contract owner and the automated Gelato smart contract
----
-
 # Function payOutERC20Invoice()
 
-This function handles the payment of all due payment references and payout of additional fees.\
+This function handles the payment of all due payment references and payout of additional fees.
 
-
-Anyone can call this function by passing in a `bytes` array of due payment references. Make sure to respect the max length of the array by checking the `maxPayoutArraySize` parameter.
+Anyone can call this function by passing in a `bytes` array of due payment references. Make sure to respect the max length of the array by checking the `maxPayoutArraySize` parameter. This parameter is set to prevent hitting the block gas limit.
 
 #### Request Network compatibility
 
 To ensure the compatibility with [Request Network](https://www.request.network), the payout function checks the `_feeAddress`.\
 When the check passes, Request's [`ERC20FeeProxy`](https://github.com/RequestNetwork/requestNetwork/blob/master/packages/smart-contracts/src/contracts/ERC20FeeProxy.sol) gets called.
 
-````solidity
 ```solidity
 function payOutERC20Invoice(bytes[] calldata payoutReferencesArray) external nonReentrant {
  
@@ -76,5 +70,4 @@ function payOutERC20Invoice(bytes[] calldata payoutReferencesArray) external non
           
     }
 ```
-````
 
