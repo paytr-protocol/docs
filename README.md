@@ -6,6 +6,12 @@ The Paytr Protocol aims to facilitate compounding interests by paying invoices e
 
 Our smart contract leverages the power of [Compound Finance](https://compound.finance/) to earn yield on your payments.
 
+## Use cases
+
+* Earn by paying early
+* Risk free invoice factoring when payment was made through Paytr. The payment date is confirmed.
+* Great payment reputation
+
 ## Quick links
 
 {% content-ref url="overview/how-does-it-work/" %}
