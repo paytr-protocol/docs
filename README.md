@@ -1,14 +1,13 @@
 <p align="center">
     <a href="https://twitter.com/paytr_protocol">
-     <img alt="Twitter" src="https://img.shields.io/badge/Twitter-1DA1F2?logo=twitter&logoColor=white" />
+     <img alt="Twitter" src="https://img.shields.io/badge/Twitter-1DA1F2?logo=twitter&logoColor=white"/>
     </a>
-    <img alt="Last Commit" src="https://img.shields.io/github/last-commit/{paytr-protocol}/{contracts}.svg">
-    <img alt="License" src="https://img.shields.io/github/license/{paytr-protocol}/{contracts}.svg">
-    <img alt="Open pull requests" src="https://img.shields.io/github/issues-pr/{paytr-protocol}/{contracts}.svg">
-    <img alt="Closed pull requests" src="https://img.shields.io/github/issues-pr-closed/{paytr-protocol}/{contracts}.svg"> 
+    <img alt="Last Commit" src="https://img.shields.io/github/last-commit/paytr-protocol/contracts.svg">
+    <img alt="Open pull requests" src="https://img.shields.io/github/issues-pr/paytr-protocol/contracts.svg">
+    <img alt="Closed pull requests" src="https://img.shields.io/github/issues-pr-closed/paytr-protocol/contracts.svg"> 
 </p>
 
-# Earn money by paying early
+# The Paytr Protocol: Earn money by paying early
 
 Get rewarded just by paying. Easy, right? No need to do anything out of the ordinary.
 You pay, our smart contract takes care of the yield, you and your supplier receive funds on the due date.
